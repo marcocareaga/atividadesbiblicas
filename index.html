@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kids Atividades Bíblicas — Kit 20 Jogos Cristãos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FDF8F0;
+    --gold: #C8952A;
+    --gold-light: #F0C45A;
+    --gold-dark: #96700F;
+    --brown: #5C3D1E;
+    --brown-light: #8B6240;
+    --green: #2D6A4F;
+    --green-light: #52B788;
+    --green-pale: #D8F3DC;
+    --red-warm: #C1440E;
+    --orange: #E07B39;
+    --text: #2C1A0E;
+    --text-mid: #5C3D1E;
+    --text-muted: #9B7B5C;
+    --white: #FFFFFF;
+    --shadow: 0 4px 24px rgba(92,61,30,0.13);
+    --shadow-lg: 0 12px 48px rgba(92,61,30,0.18);
+    --radius: 16px;
+    --radius-sm: 10px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+    line-height: 1.6;
+  }
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 15% 20%, rgba(200,149,42,0.06) 0%, transparent 50%),
+      radial-gradient(circle at 85% 70%, rgba(45,106,79,0.06) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .container { max-width: 520px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 1; }
+  .section { padding: 48px 0; }
+
+  /* TOP BAR */
+  .topbar {
+    background: var(--green);
+    color: #fff;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .03em;
+    position: relative; z-index: 10;
+  }
+  .topbar span { color: var(--gold-light); }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(160deg, #1B4332 0%, #2D6A4F 55%, #40916C 100%);
+    padding: 48px 0 56px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '✝';
+    position: absolute;
+    font-size: 320px;
+    color: rgba(255,255,255,0.03);
+    top: -60px; right: -60px;
+    line-height: 1;
+    pointer-events: none;
+    font-family: serif;
+  }
+  .hero-eyebrow {
+    display: inline-block;
+    background: rgba(240,196,90,0.18);
+    border: 1px solid rgba(240,196,90,0.5);
+    color: var(--gold-light);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 7vw, 36px);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+  .hero h1 em { font-style: italic; color: var(--gold-light); }
+  .hero-sub {
+    font-size: 16px;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 28px;
+    font-weight: 600;
+  }
+  .hero-sub strong { color: #fff; }
+  .hero-mockup-wrap { position: relative; display: flex; justify-content: center; }
+  .hero-mockup {
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto 28px;
+    display: block;
+    border-radius: var(--radius);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+  }
+  .badge-discount {
+    position: absolute;
+    top: -12px; right: 10px;
+    background: var(--red-warm);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 800;
+    padding: 6px 14px;
+    border-radius: 20px;
+    box-shadow: 0 4px 16px rgba(193,68,14,0.45);
+    animation: pulse-badge 2s ease-in-out infinite;
+  }
+  @keyframes pulse-badge { 0%,100%{transform:scale(1)} 50%{transform:scale(1.06)} }
+  .price-block {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: var(--radius);
+    padding: 20px;
+    margin-bottom: 24px;
+    backdrop-filter: blur(10px);
+  }
+  .price-from { font-size: 14px; color: rgba(255,255,255,0.6); text-decoration: line-through; }
+  .price-now-label { font-size: 13px; color: var(--gold-light); font-weight: 700; margin: 4px 0; }
+  .price-main { font-size: 46px; font-weight: 900; color: #fff; line-height: 1; margin-bottom: 8px; }
+  .price-main sup { font-size: 22px; vertical-align: super; }
+  .price-main sub { font-size: 18px; }
+  .price-guarantee { font-size: 12px; color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 6px; }
+  .price-guarantee::before { content: '🛡️'; }
+
+  .btn-main {
+    display: block;
+    width: 100%;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%);
+    background-size: 200% auto;
+    color: var(--brown);
+    font-family: 'Nunito', sans-serif;
+    font-size: 17px;
+    font-weight: 800;
+    text-align: center;
+    padding: 18px 24px;
+    border-radius: var(--radius);
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 6px 24px rgba(200,149,42,0.45);
+    animation: shine 3s linear infinite;
+    letter-spacing: .02em;
+    transition: transform .15s, box-shadow .15s;
+  }
+  .btn-main:active { transform: scale(.98); }
+  @keyframes shine { 0%{background-position:0% center} 100%{background-position:200% center} }
+  .btn-sub { text-align: center; font-size: 12px; color: rgba(255,255,255,0.6); margin-top: 10px; }
+  .btn-sub span { color: var(--green-light); }
+
+  .trust-row { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; padding: 16px 0 0; }
+  .trust-item {
+    display: flex; align-items: center; gap: 5px;
+    font-size: 11px; font-weight: 700; color: var(--text-muted);
+    background: #fff; padding: 6px 12px;
+    border-radius: 20px; border: 1px solid rgba(92,61,30,0.1);
+  }
+
+  /* SECTION */
+  .section-label {
+    display: inline-block;
+    font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--green); background: var(--green-pale);
+    padding: 4px 12px; border-radius: 20px; margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 6vw, 30px);
+    font-weight: 900; color: var(--text); line-height: 1.25; margin-bottom: 20px;
+  }
+  .section-title em { font-style: italic; color: var(--green); }
+  .section-title .gold { color: var(--gold-dark); }
+
+  /* PAIN */
+  .pain-section { background: #fff; border-top: 4px solid var(--green); }
+  .pain-list { list-style: none; }
+  .pain-list li {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 14px 0; border-bottom: 1px solid rgba(92,61,30,0.07);
+    font-size: 15px; color: var(--text-mid); font-weight: 600;
+  }
+  .pain-list li:last-child { border-bottom: none; }
+  .pain-emoji { font-size: 22px; flex-shrink: 0; margin-top: 1px; }
+
+  /* SOLUTION */
+  .solution-section { background: linear-gradient(180deg, var(--cream) 0%, #FFF8EC 100%); }
+  .solution-card {
+    background: #fff; border-radius: var(--radius); padding: 24px;
+    box-shadow: var(--shadow); border: 1px solid rgba(200,149,42,0.15); margin-top: 12px;
+  }
+  .solution-card h3 { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+  .solution-card p { font-size: 14px; color: var(--text-muted); line-height: 1.65; }
+  .solution-icon { font-size: 36px; margin-bottom: 12px; display: block; }
+
+  /* HOW */
+  .how-section { background: var(--green); }
+  .how-section .section-title { color: #fff; }
+  .how-section .section-title em { color: var(--gold-light); }
+  .steps { display: flex; flex-direction: column; gap: 0; margin-top: 28px; }
+  .step { display: flex; align-items: flex-start; gap: 16px; position: relative; padding-bottom: 28px; }
+  .step:last-child { padding-bottom: 0; }
+  .step-line { position: absolute; left: 19px; top: 44px; bottom: 0; width: 2px; background: rgba(240,196,90,0.3); }
+  .step:last-child .step-line { display: none; }
+  .step-num {
+    width: 40px; height: 40px; background: var(--gold); color: var(--brown);
+    font-size: 18px; font-weight: 900; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(200,149,42,0.4); position: relative; z-index: 1;
+  }
+  .step-content h4 { font-size: 16px; font-weight: 800; color: #fff; margin-bottom: 4px; }
+  .step-content p { font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.55; }
+
+  /* GAMES */
+  .games-section { background: #fff; }
+  .games-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 24px; }
+  .game-card {
+    background: var(--cream); border: 1px solid rgba(200,149,42,0.2);
+    border-radius: var(--radius-sm); padding: 14px 12px; text-align: center;
+    transition: transform .15s;
+  }
+  .game-card:active { transform: scale(.97); }
+  .game-icon { font-size: 28px; margin-bottom: 6px; display: block; }
+  .game-name { font-size: 12px; font-weight: 800; color: var(--text); line-height: 1.3; }
+
+  /* SAMPLES */
+  .samples-section { background: var(--cream); }
+  .samples-scroll { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 20px; }
+  .sample-img {
+    width: 100%; border-radius: var(--radius-sm);
+    box-shadow: var(--shadow); display: block;
+    aspect-ratio: 1; object-fit: cover;
+  }
+
+  /* BONUS */
+  .bonus-section { background: linear-gradient(160deg,#FFF8EC 0%, var(--cream) 100%); }
+  .bonus-eyebrow {
+    display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--red-warm);
+    background: rgba(193,68,14,0.1); padding: 4px 12px; border-radius: 20px; margin-bottom: 12px;
+  }
+  .bonus-card {
+    background: #fff; border-radius: var(--radius); overflow: hidden;
+    box-shadow: var(--shadow); border-left: 4px solid var(--gold); margin-bottom: 14px;
+  }
+  .bonus-img { width: 100%; display: block; max-height: 220px; object-fit: cover; }
+  .bonus-body { padding: 16px; }
+  .bonus-badge {
+    display: inline-block; background: var(--gold); color: var(--brown);
+    font-size: 11px; font-weight: 800; padding: 3px 10px; border-radius: 20px; margin-bottom: 8px;
+  }
+  .bonus-body h4 { font-size: 15px; font-weight: 800; color: var(--text); margin-bottom: 4px; }
+  .bonus-body p { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+  .bonus-timer {
+    background: var(--red-warm); color: #fff;
+    border-radius: var(--radius); padding: 16px 20px; text-align: center; margin-top: 8px;
+  }
+  .bonus-timer p { font-size: 13px; font-weight: 700; margin-bottom: 8px; }
+  .timer-display { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 900; letter-spacing: .05em; }
+  .timer-label { font-size: 10px; font-weight: 700; letter-spacing: .08em; opacity: .8; margin-top: 2px; }
+
+  /* TESTIMONIALS */
+  .testimonials-section { background: var(--green); }
+  .testimonials-section .section-title { color: #fff; }
+  .testimonial-card {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: var(--radius); padding: 20px; margin-bottom: 14px;
+    backdrop-filter: blur(8px);
+  }
+  .testimonial-stars { color: var(--gold-light); font-size: 16px; margin-bottom: 8px; }
+  .testimonial-text {
+    font-size: 14px; color: rgba(255,255,255,0.9);
+    line-height: 1.65; font-style: italic; margin-bottom: 14px;
+  }
+  .testimonial-author { display: flex; align-items: center; gap: 12px; }
+  .author-avatar-img {
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--gold-light);
+    flex-shrink: 0;
+  }
+  .author-name { font-size: 13px; font-weight: 800; color: #fff; }
+  .author-role { font-size: 11px; color: rgba(255,255,255,0.6); }
+
+  /* FOR WHO */
+  .forwho-section { background: var(--cream); }
+  .forwho-item {
+    display: flex; align-items: flex-start; gap: 14px;
+    padding: 14px 0; border-bottom: 1px solid rgba(92,61,30,0.08);
+  }
+  .forwho-item:last-child { border-bottom: none; }
+  .check-circle {
+    width: 28px; height: 28px; background: var(--green); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-size: 14px; flex-shrink: 0; margin-top: 1px;
+  }
+  .forwho-item p { font-size: 15px; font-weight: 600; color: var(--text-mid); }
+
+  /* FAQ */
+  .faq-section { background: #fff; }
+  .faq-item {
+    border: 1px solid rgba(92,61,30,0.1);
+    border-radius: var(--radius-sm); margin-bottom: 10px; overflow: hidden;
+  }
+  .faq-question {
+    width: 100%; background: none; border: none;
+    padding: 16px 18px; display: flex; justify-content: space-between; align-items: center;
+    cursor: pointer; text-align: left;
+    font-family: 'Nunito', sans-serif; font-size: 14px; font-weight: 800; color: var(--text);
+  }
+  .faq-arrow {
+    flex-shrink: 0; width: 22px; height: 22px;
+    background: var(--green-pale); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; color: var(--green); transition: transform .25s;
+  }
+  .faq-item.open .faq-arrow { transform: rotate(180deg); }
+  .faq-answer {
+    max-height: 0; overflow: hidden;
+    transition: max-height .3s ease, padding .3s;
+    font-size: 14px; color: var(--text-muted); line-height: 1.65; padding: 0 18px;
+  }
+  .faq-item.open .faq-answer { max-height: 200px; padding: 0 18px 16px; }
+
+  /* CTA FINAL */
+  .cta-section {
+    background: linear-gradient(160deg, #1B4332 0%, #2D6A4F 100%);
+    padding: 52px 0; position: relative; overflow: hidden;
+  }
+  .cta-section::before {
+    content: '✝'; position: absolute; font-size: 280px;
+    color: rgba(255,255,255,0.03); bottom: -60px; left: -40px;
+    line-height: 1; pointer-events: none; font-family: serif;
+  }
+  .cta-section .section-title { color: #fff; }
+  .cta-section .section-title em { color: var(--gold-light); }
+  .offer-box {
+    background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+    border-radius: var(--radius); padding: 24px; margin: 24px 0;
+  }
+  .offer-list { list-style: none; margin-bottom: 20px; }
+  .offer-list li {
+    font-size: 14px; color: rgba(255,255,255,0.85);
+    padding: 5px 0; display: flex; align-items: center; gap: 8px;
+  }
+  .offer-list li::before { content: '✓'; color: var(--gold-light); font-weight: 900; flex-shrink: 0; }
+  .offer-price-block { text-align: center; margin-bottom: 20px; }
+  .offer-from { font-size: 15px; color: rgba(255,255,255,0.5); text-decoration: line-through; }
+  .offer-price { font-size: 52px; font-weight: 900; color: #fff; line-height: 1; margin: 8px 0 4px; }
+  .offer-price sup { font-size: 24px; }
+  .offer-once { font-size: 12px; color: rgba(255,255,255,0.6); }
+  .security-row { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-top: 16px; }
+  .sec-item { font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.6); display: flex; align-items: center; gap: 5px; }
+
+  /* GUARANTEE */
+  .guarantee-section { background: var(--cream); }
+  .guarantee-box {
+    background: #fff; border-radius: var(--radius); padding: 28px 24px;
+    box-shadow: var(--shadow); border: 2px solid var(--green); text-align: center;
+  }
+  .guarantee-icon { font-size: 52px; margin-bottom: 12px; display: block; }
+  .guarantee-box h3 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 900; color: var(--green); margin-bottom: 10px; }
+  .guarantee-box p { font-size: 14px; color: var(--text-muted); line-height: 1.65; }
+
+  /* STICKY */
+  .sticky-cta {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: var(--green); padding: 12px 20px;
+    box-shadow: 0 -4px 24px rgba(0,0,0,0.2); z-index: 100;
+    display: none; align-items: center; justify-content: space-between; gap: 12px;
+  }
+  .sticky-cta.visible { display: flex; }
+  .sticky-price { color: #fff; }
+  .sticky-price .sp-from { font-size: 11px; text-decoration: line-through; opacity: .6; }
+  .sticky-price .sp-now { font-size: 22px; font-weight: 900; line-height: 1; }
+  .sticky-btn {
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--brown); font-family: 'Nunito', sans-serif;
+    font-size: 13px; font-weight: 800; padding: 12px 20px;
+    border-radius: var(--radius-sm); border: none; cursor: pointer;
+    text-decoration: none; white-space: nowrap; flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(200,149,42,0.4);
+  }
+
+  /* FOOTER */
+  footer { background: var(--brown); color: rgba(255,255,255,0.5); padding: 32px 20px; text-align: center; font-size: 11px; line-height: 1.8; }
+  footer a { color: rgba(255,255,255,0.5); text-decoration: underline; }
+
+  /* ANIMATIONS */
+  .fade-in { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">🔥 OFERTA ESPECIAL: <span>Economize 69%</span> — Apenas hoje por R$29,90</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-eyebrow">Kit Digital de Jogos Cristãos</div>
+    <h1>Mãe, veja seus filhos <em>amando a Bíblia</em> — sem precisar preparar nada do zero</h1>
+    <p class="hero-sub"><strong>+20 jogos e atividades bíblicas prontas para imprimir</strong>, criadas para tornar o aprendizado da fé uma diversão inesquecível para crianças de 3 a 12 anos.</p>
+
+    <div class="hero-mockup-wrap">
+      <img class="hero-mockup" src="https://atividadesbiblicas.ofertaki.net/wp-content/uploads/2025/10/Copia-de-Pacotes-completos-40-scaled-1-1024x768.png" alt="Kit Kids Atividades Bíblicas">
+      <div class="badge-discount">-69% OFF</div>
+    </div>
+
+    <div class="price-block">
+      <div class="price-from">De R$97,00</div>
+      <div class="price-now-label">⚡ Oferta exclusiva — pagamento único</div>
+      <div class="price-main"><sup>R$</sup>29<sub>,90</sub></div>
+      <div class="price-guarantee">Garantia de 7 dias ou seu dinheiro de volta</div>
+    </div>
+
+    <a href="https://lastlink.com/p/C6146C72C/checkout-payment/" target="_blank" rel="noopener" class="btn-main" id="hero-cta">
+      ✨ QUERO MEU KIT AGORA POR R$29,90
+    </a>
+    <div class="btn-sub">🔒 Pagamento 100% seguro &nbsp;·&nbsp; <span>✓ Acesso imediato por e-mail</span></div>
+
+    <div class="trust-row">
+      <div class="trust-item">🛡️ Compra segura</div>
+      <div class="trust-item">⚡ Acesso imediato</div>
+      <div class="trust-item">🖨️ Imprima à vontade</div>
+      <div class="trust-item">↩️ 7 dias de garantia</div>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN -->
+<section class="pain-section section fade-in">
+  <div class="container">
+    <div class="section-label">Você se identifica?</div>
+    <h2 class="section-title">Ensinar a fé na correria do dia a dia <em>é desafiador</em></h2>
+    <ul class="pain-list">
+      <li><span class="pain-emoji">⏰</span><span>Sua rotina é cheia e você não tem tempo de preparar atividades educativas do zero toda semana</span></li>
+      <li><span class="pain-emoji">😔</span><span>As crianças perdem o interesse em lições longas e ficam dispersas durante o aprendizado bíblico</span></li>
+      <li><span class="pain-emoji">😟</span><span>Você quer que seus filhos cresçam com fé, mas não sabe como tornar isso divertido e envolvente</span></li>
+      <li><span class="pain-emoji">💸</span><span>Materiais de qualidade são caros e você quer algo que realmente valha o investimento</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- SOLUTION -->
+<section class="solution-section section fade-in">
+  <div class="container">
+    <div class="section-label">A Solução</div>
+    <h2 class="section-title">Materiais prontos que <em>ensinam a fé</em> enquanto as crianças <span class="gold">se divertem</span></h2>
+    <p style="font-size:15px;color:var(--text-muted);margin-bottom:24px;line-height:1.7">O <strong>Kids Atividades Bíblicas</strong> é um kit completo de 20+ jogos cristãos em PDF, criados por educadores cristãos, pensados para mães ocupadas que querem ver seus filhos crescerem na fé — sem culpa e sem estresse.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <div class="solution-card">
+        <span class="solution-icon">🖨️</span>
+        <h3>Pronto para imprimir</h3>
+        <p>Baixe, imprima e use. Sem edição, sem criação. Tudo pronto pra você.</p>
+      </div>
+      <div class="solution-card">
+        <span class="solution-icon">📖</span>
+        <h3>Baseado na Bíblia</h3>
+        <p>Cada jogo foi pensado para ensinar personagens, versículos e histórias bíblicas.</p>
+      </div>
+      <div class="solution-card">
+        <span class="solution-icon">🎮</span>
+        <h3>Diversão garantida</h3>
+        <p>Jogos que as crianças pedem pra jogar de novo — quem brinca, aprende.</p>
+      </div>
+      <div class="solution-card">
+        <span class="solution-icon">♾️</span>
+        <h3>Use sem limites</h3>
+        <p>Imprima quantas vezes quiser, para quantas crianças precisar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section section fade-in">
+  <div class="container">
+    <h2 class="section-title">Como funciona <em>o acesso</em></h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-line"></div>
+        <div class="step-num">1</div>
+        <div class="step-content"><h4>Compre com segurança</h4><p>Clique no botão, escolha seu método de pagamento preferido. Processo rápido e seguro.</p></div>
+      </div>
+      <div class="step">
+        <div class="step-line"></div>
+        <div class="step-num">2</div>
+        <div class="step-content"><h4>Receba no seu e-mail</h4><p>Imediatamente após a aprovação do pagamento, você recebe o link de acesso na caixa de entrada.</p></div>
+      </div>
+      <div class="step">
+        <div class="step-line"></div>
+        <div class="step-num">3</div>
+        <div class="step-content"><h4>Baixe e imprima</h4><p>Acesse a área de membros, faça download dos PDFs e leve para a impressora. Simples assim.</p></div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content"><h4>Diversão e fé em família 🎉</h4><p>Reúna as crianças e veja como a Bíblia ganha vida de um jeito que elas nunca vão esquecer.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GAMES -->
+<section class="games-section section fade-in">
+  <div class="container">
+    <div class="section-label">O que está incluso</div>
+    <h2 class="section-title">Mais de <em>20 jogos bíblicos</em> prontos para você</h2>
+    <div class="games-grid">
+      <div class="game-card"><span class="game-icon">🃏</span><div class="game-name">Super Trunfo — Livros da Bíblia</div></div>
+      <div class="game-card"><span class="game-icon">🎴</span><div class="game-name">UNO da Fé</div></div>
+      <div class="game-card"><span class="game-icon">🧠</span><div class="game-name">Jogo da Memória Bíblica</div></div>
+      <div class="game-card"><span class="game-icon">🎱</span><div class="game-name">Bingo Bíblico & Bingo de Jesus</div></div>
+      <div class="game-card"><span class="game-icon">🀱</span><div class="game-name">Dominó Bíblico</div></div>
+      <div class="game-card"><span class="game-icon">🔍</span><div class="game-name">Encontre (Cenas Bíblicas)</div></div>
+      <div class="game-card"><span class="game-icon">💡</span><div class="game-name">Que Livro é Este?</div></div>
+      <div class="game-card"><span class="game-icon">👤</span><div class="game-name">Quem Sou Eu?</div></div>
+      <div class="game-card"><span class="game-icon">❓</span><div class="game-name">Quiz Bíblico (3 níveis)</div></div>
+      <div class="game-card"><span class="game-icon">✔️</span><div class="game-name">Verdade ou Mentira</div></div>
+      <div class="game-card"><span class="game-icon">🔎</span><div class="game-name">3 Pistas</div></div>
+      <div class="game-card"><span class="game-icon">🃀</span><div class="game-name">Mico da Fé + Spot It</div></div>
+    </div>
+    <p style="text-align:center;font-size:13px;color:var(--text-muted);margin-top:16px;font-weight:700">+ muito mais inclusos no kit!</p>
+  </div>
+</section>
+
+<!-- SAMPLES -->
+<section class="samples-section section fade-in">
+  <div class="container">
+    <div class="section-label">Veja as amostras</div>
+    <h2 class="section-title">Materiais de <em>alta qualidade</em> visual</h2>
+    <div class="samples-scroll">
+      <img class="sample-img" src="https://atividadesbiblicas.ofertaki.net/wp-content/uploads/2025/10/criativos-56-768x768.png" alt="Amostra 1" loading="lazy">
+      <img class="sample-img" src="https://atividadesbiblicas.ofertaki.net/wp-content/uploads/2025/10/criativos-85-768x768.png" alt="Amostra 2" loading="lazy">
+      <img class="sample-img" src="https://atividadesbiblicas.ofertaki.net/wp-content/uploads/2025/10/criativos-84-768x768.png" alt="Amostra 3" loading="lazy">
+      <img class="sample-img" src="https://atividadesbiblicas.ofertaki.net/wp-content/uploads/2025/10/criativos-73-768x768.png" alt="Amostra 4" loading="lazy">
+      <img class="sample-img" src="https://atividadesbiblicas.ofertaki.net/wp-content/uploads/2025/10/criativos-81-768x768.png" alt="Amostra 5" loading="lazy">
+      <img class="sample-img" src="https://atividadesbiblicas.ofertaki.net/wp-content/uploads/2025/10/criativos-82-768x768.png" alt="Amostra 6" loading="lazy">
+      <img class="sample-img" src="https://atividadesbiblicas.ofertaki.net/wp-content/uploads/2025/10/criativos-70-768x768.png" alt="Amostra 7" loading="lazy">
+      <img class="sample-img" src="https://atividadesbiblicas.ofertaki.net/wp-content/uploads/2025/10/criativos-69-768x768.png" alt="Amostra 8" loading="lazy">
+      <img class="sample-img" src="https://atividadesbiblicas.ofertaki.net/wp-content/uploads/2025/10/criativos-63-768x768.png" alt="Amostra 9" loading="lazy">
+      <img class="sample-img" src="https://atividadesbiblicas.ofertaki.net/wp-content/uploads/2025/10/criativos-61-768x768.png" alt="Amostra 10" loading="lazy">
+    </div>
+    <div style="text-align:center;margin-top:24px">
+      <a href="https://lastlink.com/p/C6146C72C/checkout-payment/" target="_blank" rel="noopener" class="btn-main" style="max-width:340px;display:inline-block">
+        🎮 QUERO ESSE KIT COMPLETO POR R$29,90
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- BONUS -->
+<section class="bonus-section section fade-in">
+  <div class="container">
+    <div class="bonus-eyebrow">⏳ Apenas nas primeiras 48 horas</div>
+    <h2 class="section-title">Leve também estes <em>3 bônus exclusivos</em></h2>
+
+    <div class="bonus-card">
+      <img class="bonus-img" src="https://atividadesbiblicas.ofertaki.net/wp-content/uploads/2025/10/criativos-38-1024x794.png" alt="Álbum Heróis da Fé" loading="lazy">
+      <div class="bonus-body">
+        <div class="bonus-badge">Bônus #1</div>
+        <h4>Álbum de Figurinhas — Heróis da Fé</h4>
+        <p>Figurinhas incríveis para colar, aprender e se inspirar com os grandes heróis bíblicos. As crianças vão adorar completar o álbum!</p>
+      </div>
+    </div>
+
+    <div class="bonus-card">
+      <img class="bonus-img" src="https://atividadesbiblicas.ofertaki.net/wp-content/uploads/2025/10/criativos-65-1-1024x1024.png" alt="Guia de Oração" loading="lazy">
+      <div class="bonus-body">
+        <div class="bonus-badge">Bônus #2</div>
+        <h4>Meu Primeiro Guia de Oração</h4>
+        <p>Um guia divertido e colorido que ensina a criança a orar, com atividades que desenvolvem o espiritual e o cognitivo.</p>
+      </div>
+    </div>
+
+    <div class="bonus-card">
+      <img class="bonus-img" src="https://atividadesbiblicas.ofertaki.net/wp-content/uploads/2025/10/criativos-66-1-1024x1024.png" alt="Cartões de Memorização" loading="lazy">
+      <div class="bonus-body">
+        <div class="bonus-badge">Bônus #3</div>
+        <h4>Cartões de Memorização Bíblica</h4>
+        <p>Cartões lindos para sua criança memorizar versículos e ter a Palavra de Deus sempre na ponta da língua.</p>
+      </div>
+    </div>
+
+    <div class="bonus-timer">
+      <p>⏰ Essa oferta com bônus expira em:</p>
+      <div class="timer-display" id="countdown">00:00:00</div>
+      <div class="timer-label">HORAS · MINUTOS · SEGUNDOS</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section section fade-in">
+  <div class="container">
+    <h2 class="section-title">O que as <em>mães estão dizendo</em></h2>
+
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">"Meus filhos simplesmente não largam mais! O Bingo Bíblico virou programa fixo na nossa casa. Eu mal acredito que por menos de R$30 eu tenho material pra semanas de atividades."</p>
+      <div class="testimonial-author">
+        <img
+          class="author-avatar-img"
+          src="https://randomuser.me/api/portraits/women/44.jpg"
+          alt="Priscila M."
+          loading="lazy"
+        >
+        <div>
+          <div class="author-name">Priscila M.</div>
+          <div class="author-role">Mãe de 3 filhos · São Paulo</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">"Uso na Escola Dominical toda semana. As crianças ficam animadas, os pais elogiam e eu economizo horas de preparação. Material lindo e muito bem feito!"</p>
+      <div class="testimonial-author">
+        <img
+          class="author-avatar-img"
+          src="https://randomuser.me/api/portraits/women/68.jpg"
+          alt="Professora Débora S."
+          loading="lazy"
+        >
+        <div>
+          <div class="author-name">Professora Débora S.</div>
+          <div class="author-role">Escola Dominical · Minas Gerais</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">"Minha filha de 5 anos já sabe nomear vários livros da Bíblia por causa do Super Trunfo! Ela não sabe que está 'estudando' — para ela é só diversão. Esse material é ouro."</p>
+      <div class="testimonial-author">
+        <img
+          class="author-avatar-img"
+          src="https://randomuser.me/api/portraits/women/26.jpg"
+          alt="Renata C."
+          loading="lazy"
+        >
+        <div>
+          <div class="author-name">Renata C.</div>
+          <div class="author-role">Mãe e Educadora Cristã · RS</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">"Uso nos atendimentos de terapia infantil e os resultados são incríveis. As crianças se abrem muito mais quando estão brincando. Recomendo demais!"</p>
+      <div class="testimonial-author">
+        <img
+          class="author-avatar-img"
+          src="https://randomuser.me/api/portraits/women/52.jpg"
+          alt="Fernanda O."
+          loading="lazy"
+        >
+        <div>
+          <div class="author-name">Fernanda O.</div>
+          <div class="author-role">Terapeuta Cristã · Goiás</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:8px">
+      <div style="font-size:24px;color:var(--gold-light);letter-spacing:2px">★★★★★</div>
+      <p style="font-size:13px;font-weight:800;color:rgba(255,255,255,0.8);margin-top:6px">+500 mães e professoras satisfeitas</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOR WHO -->
+<section class="forwho-section section fade-in">
+  <div class="container">
+    <div class="section-label">É para você?</div>
+    <h2 class="section-title">Este kit foi feito <em>para você</em> se...</h2>
+    <div>
+      <div class="forwho-item"><div class="check-circle">✓</div><p>Você é mãe cristã ocupada que quer ensinar a Bíblia de forma prática e sem culpa</p></div>
+      <div class="forwho-item"><div class="check-circle">✓</div><p>Você é professora de Escola Dominical buscando material bonito, pronto e envolvente</p></div>
+      <div class="forwho-item"><div class="check-circle">✓</div><p>Você quer que seus filhos se divirtam enquanto aprendem os valores cristãos</p></div>
+      <div class="forwho-item"><div class="check-circle">✓</div><p>Você faz homeschooling com base cristã e precisa de recursos educativos prontos</p></div>
+      <div class="forwho-item"><div class="check-circle">✓</div><p>Você é terapeuta cristã e quer atividades lúdicas para atendimentos infantis</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section section fade-in">
+  <div class="container">
+    <div class="section-label">Dúvidas frequentes</div>
+    <h2 class="section-title">Perguntas e <em>respostas</em></h2>
+    <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">Para qual faixa etária é indicado?<span class="faq-arrow">▼</span></button><div class="faq-answer">Os materiais são indicados para crianças a partir de 3 anos. Os jogos foram desenvolvidos com diferentes níveis de dificuldade, sendo adequados para crianças de 3 a 12 anos, dependendo da atividade.</div></div>
+    <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">Preciso de uma impressora especial?<span class="faq-arrow">▼</span></button><div class="faq-answer">Não! Qualquer impressora doméstica serve. Os PDFs foram otimizados para impressão em papel A4 comum. Para resultados melhores, você pode usar papel mais grosso (180g) ou plastificar as peças para usar várias vezes.</div></div>
+    <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">Posso usar na Escola Dominical ou em grupo?<span class="faq-arrow">▼</span></button><div class="faq-answer">Sim! Você pode imprimir e usar quantas vezes quiser, para quantas crianças precisar. Após a compra, o acesso é seu para uso pessoal e em ministério sem limite de impressões.</div></div>
+    <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">Como recebo o material?<span class="faq-arrow">▼</span></button><div class="faq-answer">Imediatamente após a aprovação do pagamento, você recebe um e-mail com os dados de acesso à sua área de membros, onde todos os materiais ficam organizados para download.</div></div>
+    <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">E se eu não gostar? Tenho garantia?<span class="faq-arrow">▼</span></button><div class="faq-answer">Sim! Você tem 7 dias de garantia incondicional. Se por qualquer motivo não gostar, basta enviar um e-mail e devolvemos 100% do seu investimento. Sem perguntas, sem burocracia. Você não corre nenhum risco.</div></div>
+    <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">O pagamento é mensal ou único?<span class="faq-arrow">▼</span></button><div class="faq-answer">O pagamento é único! Você paga uma única vez e tem acesso permanente a todos os materiais, incluindo futuras atualizações. Não é assinatura, não tem mensalidade.</div></div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-section">
+  <div class="container">
+    <h2 class="section-title">Comece <em>hoje mesmo</em> a ver seus filhos amando a Bíblia</h2>
+    <p style="color:rgba(255,255,255,0.8);font-size:15px;margin-bottom:8px;line-height:1.65">Por apenas <strong style="color:var(--gold-light)">R$29,90</strong> — menos que um lanche em família — você garante semanas de aprendizado bíblico divertido e memorável.</p>
+    <div class="offer-box">
+      <ul class="offer-list">
+        <li>20+ jogos bíblicos prontos para imprimir</li>
+        <li>Super Trunfo, UNO, Memória, Bingo e muito mais</li>
+        <li>Quiz com 3 níveis de dificuldade</li>
+        <li><strong style="color:var(--gold-light)">Bônus #1:</strong> Álbum Heróis da Fé</li>
+        <li><strong style="color:var(--gold-light)">Bônus #2:</strong> Guia de Oração Infantil</li>
+        <li><strong style="color:var(--gold-light)">Bônus #3:</strong> Cartões de Memorização</li>
+        <li>Acesso à área de membros permanente</li>
+        <li>Impressão ilimitada para uso pessoal</li>
+      </ul>
+      <div class="offer-price-block">
+        <div class="offer-from">De R$97,00</div>
+        <div class="offer-price"><sup>R$</sup>29,90</div>
+        <div class="offer-once">Pagamento único · Acesso imediato</div>
+      </div>
+      <a href="https://lastlink.com/p/C6146C72C/checkout-payment/" target="_blank" rel="noopener" class="btn-main">
+        ✨ SIM! QUERO MEU KIT AGORA
+      </a>
+      <div class="security-row" style="margin-top:16px">
+        <div class="sec-item">🔒 Pagamento Seguro</div>
+        <div class="sec-item">💳 Cartão / Pix / Boleto</div>
+        <div class="sec-item">🛡️ Garantia 7 dias</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<section class="guarantee-section section fade-in">
+  <div class="container">
+    <div class="guarantee-box">
+      <span class="guarantee-icon">🛡️</span>
+      <h3>Garantia Total de 7 Dias</h3>
+      <p>Acreditamos tanto na qualidade deste material que oferecemos uma garantia incondicional. Se por qualquer motivo você não ficar satisfeita nos primeiros 7 dias, devolvemos cada centavo do seu investimento. Você não tem nada a perder — e tem muito a ganhar para a fé dos seus filhos.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STICKY CTA -->
+<div class="sticky-cta" id="sticky-cta">
+  <div class="sticky-price">
+    <div class="sp-from">De R$97,00</div>
+    <div class="sp-now">R$29,90</div>
+  </div>
+  <a href="https://lastlink.com/p/C6146C72C/checkout-payment/" target="_blank" rel="noopener" class="sticky-btn">
+    ✨ GARANTIR AGORA
+  </a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p style="margin-bottom:12px;color:rgba(255,255,255,.7);font-size:13px;font-weight:700">Kids Atividades Bíblicas</p>
+  <p>ISENÇÃO DE RESPONSABILIDADE IMPORTANTE: Este site não faz parte do site do Facebook ou do Facebook, Inc. Além disso, este site não é endossado pelo Facebook de forma alguma. FACEBOOK é uma marca registrada da FACEBOOK, Inc.</p>
+  <p style="margin-top:10px">
+    <a href="#">Política de Privacidade</a> &nbsp;·&nbsp;
+    <a href="#">Termos de Uso</a> &nbsp;·&nbsp;
+    <a href="#">Contato</a>
+  </p>
+  <p style="margin-top:10px">© 2025 Kids Atividades Bíblicas. Todos os direitos reservados.</p>
+</footer>
+
+<script>
+// COUNTDOWN 48h
+(function(){
+  var key = 'kab_timer_end';
+  var end = localStorage.getItem(key);
+  if (!end) { end = Date.now() + 48*60*60*1000; localStorage.setItem(key, end); }
+  end = parseInt(end);
+  function upd() {
+    var d = end - Date.now();
+    if (d <= 0) { document.getElementById('countdown').textContent = '00:00:00'; return; }
+    var h = Math.floor(d/3600000), m = Math.floor((d%3600000)/60000), s = Math.floor((d%60000)/1000);
+    document.getElementById('countdown').textContent = String(h).padStart(2,'0')+':'+String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
+  }
+  upd(); setInterval(upd, 1000);
+})();
+
+// STICKY CTA
+var heroCta = document.getElementById('hero-cta');
+var stickyCta = document.getElementById('sticky-cta');
+var obs = new IntersectionObserver(function(e){ stickyCta.classList.toggle('visible', !e[0].isIntersecting); }, {threshold:0});
+obs.observe(heroCta);
+
+// FADE IN
+document.querySelectorAll('.fade-in').forEach(function(el){
+  new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('visible'); });
+  }, {threshold:0.1}).observe(el);
+});
+
+// FAQ
+function toggleFaq(btn){
+  var item = btn.closest('.faq-item');
+  var isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(function(i){ i.classList.remove('open'); });
+  if (!isOpen) item.classList.add('open');
+}
+</script>
+</body>
+</html>
